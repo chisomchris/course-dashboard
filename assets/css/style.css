@@ -78,6 +78,7 @@ Side navigation
 
 .hamburger:hover {
     background-color: rgba(0 0 0 / .1);
+    background-color: aliceblue;
 }
 
 .hamburger.hide {
@@ -90,7 +91,8 @@ Side navigation
     display: block;
     width: 2rem;
     height: 5px;
-    background-color: #0e0e0e;
+    /* background-color: #0e0e0e; */
+    background-color: rgb(5, 136, 141);
     border-radius: .5rem;
     -webkit-border-radius: .5rem;
     -moz-border-radius: .5rem;
@@ -378,15 +380,220 @@ main .timing .text p {
     margin-bottom: 0;
 }
 
+/* ====================
+Course List
+===================== */
+main .course_list {
+    padding: 0 1rem;
+}
+
+main .course_list ul {
+    list-style-type: none;
+    padding: 0;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+main .course_list ul li {
+    font-weight: 500;
+    margin: 0;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0 0 0 / .2);
+    z-index: 9;
+    border-radius: .375rem;
+    padding: 1.125rem .75rem;
+    padding-left: calc(1.5rem + 5vw);
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    position: relative;
+    -webkit-border-radius: .375rem;
+    -moz-border-radius: .375rem;
+    -ms-border-radius: .375rem;
+    -o-border-radius: .375rem;
+}
+
+main .course_list ul li>div p {
+    margin-bottom: .375rem;
+    display: flex;
+    gap: .5rem;
+}
+
+main .course_list ul li.header {
+    background-color: #0e0e0e;
+    color: white;
+    font-weight: 700;
+    padding: .75rem;
+    border-radius: 1rem 1rem 0rem 0rem;
+    -webkit-border-radius: 1rem 1rem 0rem 0rem;
+    -moz-border-radius: 1rem 1rem 0rem 0rem;
+    -ms-border-radius: 1rem 1rem 0rem 0rem;
+    -o-border-radius: 1rem 1rem 0rem 0rem;
+}
+
+main .course_list ul li p {
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+main .course_list ul li div:nth-child(1) {
+    background-color: #0e0e0e;
+    color: white;
+    position: absolute;
+    top: -1rem;
+    left: -1.25rem;
+    place-items: center;
+    height: 3.125rem;
+    width: 3.125rem;
+    padding-top: 1.5rem;
+    padding-left: 1.65rem;
+    border-radius: 2rem 2rem 2rem 2rem;
+    -webkit-border-radius: 2rem 2rem 2rem 2rem;
+    -moz-border-radius: 2rem 2rem 2rem 2rem;
+    -ms-border-radius: 2rem 2rem 2rem 2rem;
+    -o-border-radius: 2rem 2rem 2rem 2rem;
+}
+
+main .course_list .md-hide {
+    display: inline-block;
+    color: #0e0e0eaa;
+    font-size: smaller;
+    width: 5ch;
+}
+
+main .course_list .md-hide.header {
+    color: #fff;
+    font-size: 1em;
+    width: auto;
+}
+
+main .course_list .md-hide h2 {
+    margin: 0;
+}
+
+main .course_list .md_show {
+    display: none;
+}
+
+
 
 /* ==============
 MEDIA QUERIES
 =================*/
+/* =================
+min-width: 540px
+=================== */
+@media only screen and (min-width: 620px) {
+    main .course_list ul {
+        padding-bottom: 1rem;
+        background-color: white;
+        overflow: hidden;
+    }
+
+    main .course_list ul li {
+        box-shadow: none;
+        margin: 0;
+        background-color: white;
+        border-radius: 0;
+        display: grid;
+        padding: .5rem 1.5rem;
+        margin-bottom: 0rem;
+        grid-template-columns: repeat(100, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+
+    main .course_list ul li.header {
+        background-color: #0e0e0e;
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+
+    main .course_list ul li div:nth-child(1) {
+        grid-column: 1/8;
+        grid-row: 1/3;
+        background-color: transparent;
+        position: relative;
+        color: #0e0e0e;
+        top: 0;
+        left: 0em;
+        display: block;
+        height: auto;
+        width: auto;
+        padding-top: 0rem;
+        padding-left: 0rem;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+
+    main .course_list ul li div:nth-child(2) {
+        grid-column: 8/50;
+        grid-row: 1/3;
+        background-color: transparent;
+    }
+
+    main .course_list ul li div:nth-child(3) {
+        grid-column: 50/75;
+        grid-row: 1/3;
+        background-color: transparent;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    main .course_list ul li div:nth-child(4) {
+        grid-column: 75/90;
+        grid-row: 1/3;
+        background-color: transparent;
+    }
+
+    main .course_list ul li div:nth-child(5) {
+        grid-column: 90/101;
+        grid-row: 1/3;
+        background-color: transparent;
+        text-align: right;
+    }
+
+    main .course_list .md-hide {
+        display: none;
+    }
+
+    main .course_list .md_show {
+        display: block;
+        color: #0e0e0e;
+    }
+
+    main .course_list .md_show p {
+        color: #fff;
+    }
+
+    main .course_list .md-hide.header {
+        font-size: 1em;
+        color: #fff;
+        width: auto;
+    }
+}
 
 /* =============
-min-width: 612px
+min-width: 620px
 ================*/
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 620px) {
 
     /* progress */
 
@@ -618,7 +825,13 @@ main content
         line-height: 1.25em;
         font-size: larger;
     }
+
+    main .course_list {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
+
 @media only screen and (min-width: 768px) and (orientation: landscape) {
     .side_navigation.side_navigation .upgrade {
         margin-bottom: 1rem;
