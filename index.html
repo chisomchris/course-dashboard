@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Dasboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <section class="side_navigation">
+            <div class="logo_and_hamburger">
+                <div class="hamburger">
+                    <!--hamburger-->
+                    <i class="stroke"></i>
+                    <i class="stroke"></i>
+                    <i class="stroke"></i>
+                </div>
+                <!--hamburger end-->
+                <!--side navigation-->
+                <div class="md-logo">
+                    <!--logo-->
+                    <img src="./assets/img/Instincthub logo.png" alt="">
+                </div>
+                <!--logo end-->
+            </div>
+
+            <ul class="tablist">
+                <!--tab List -->
+                <li class="tab">
+                    <!--tab-->
+                    <div class="indicator show"></div>
+                    <img src="./assets/img/bx_bxs-dashboard.png" alt="">
+                    <p class="hide">Overview</p>
+                </li>
+                <!--tab end-->
+                <li class="tab">
+                    <!--tab-->
+                    <div class="indicator"></div>
+                    <img src="./assets/img/akar-icons_file.png" alt="">
+                    <p class="hide">Classes</p>
+                </li>
+                <!--tab end-->
+                <li class="tab">
+                    <!--tab-->
+                    <div class="indicator"></div>
+                    <img src="./assets/img/codicon_graph.png" alt="">
+                    <p class="hide">Analytics</p>
+                </li>
+                <!--tab end-->
+                <li class="tab">
+                    <!--tab-->
+                    <div class="indicator"></div>
+                    <img src="./assets/img/ic_baseline-group.png" alt="">
+                    <p class="hide">Community</p>
+                </li>
+                <!--tab end-->
+                <li class="tab">
+                    <!--tab-->
+                    <div class="indicator"></div>
+                    <img src="./assets/img/fe_logout.png" alt="">
+                    <p class="hide">Logout</p>
+                </li>
+                <!--tab end-->
+            </ul>
+            <!--tab List end-->
+
+            <div class="upgrade">
+                <!--upgrade-->
+                <img src="./assets/img/Upgrade illustration.png" alt="">
+                <h3>
+                    Upgrade your student portal account
+                </h3>
+                <button>Upgrade</button>
+            </div>
+            <!--upgrade end-->
+        </section>
+        <!--side navigation end-->
+
+        <main>
+            <!--main content-->
+            <header>
+                <!--header-->
+                <div class="sm-logo">
+                    <img src="./assets/img/Instincthub logo.png" alt="">
+                </div>
+                <div class="flex_cont">
+                    <h2>My course dashboard</h2>
+
+                    <div class="search">
+                        <input type="text" name="search" id="search" placeholder="You are looking for...">
+                        <img src="./assets/img/bx_bx-search.png" alt="" class="search_icon">
+                    </div>
+                </div>
+
+                <div class="meta">
+                    <!--user meta-->
+                    <img src="./assets/img/codicon_bell-dot.png" alt="">
+                    <img src="./assets/img/User profile.png" alt="">
+                </div>
+                <!--user meta end-->
+            </header>
+            <!--header end-->
+
+            <section class="progress">
+                <!--progress grid-->
+                <div class="timing">
+                    <div class="chart_box">
+                        <p>71%</p>
+                        <canvas id="my_progress_daily"></canvas>
+                    </div>
+
+                    <div class="text">
+                        <h3>Daily</h3>
+                        <p>Activities</p>
+                    </div>
+                </div>
+                <div class="timing">
+                    <div class="chart_box">
+                        <p>20%</p>
+                        <canvas id="my_progress_monthly"></canvas>
+                    </div>
+
+                    <div class="text">
+                        <h3>Monthly</h3>
+                        <p>Activities</p>
+                    </div>
+                </div>
+                <div class="timing">
+                    <div class="chart_box">
+                        <p>12%</p>
+                        <canvas id="my_progress_yearly"></canvas>
+                    </div>
+
+                    <div class="text">
+                        <h3>Yearly</h3>
+                        <p>Activities</p>
+                    </div>
+                </div>
+            </section>
+            <!--progress grid end-->
+
+        </main>
+        <!--main content end-->
+    </div>
+    <!-- chart js init -->
+    <script>
+        const ctx = document.getElementById('my_progress_daily');
+        const ctx1 = document.getElementById('my_progress_monthly');
+        const ctx2 = document.getElementById('my_progress_yearly');
+        const data = {
+            datasets: [{
+                data: [71, 29],
+                backgroundColor: [
+                    'rgb(121, 0, 56)',
+                    'rgb(5, 136, 141)',
+                ],
+                hoverOffset: 4,
+                borderWidth: 0,
+                cutout: '80%'
+            }]
+        };
+        const data1 = {
+            datasets: [{
+                data: [20, 80],
+                backgroundColor: [
+                    'rgb(121, 0, 56)',
+                    'rgb(5, 136, 141)',
+                ],
+                hoverOffset: 4,
+                borderWidth: 0,
+                cutout: '80%'
+            }]
+        };
+        const data2 = {
+            datasets: [{
+                data: [12, 88],
+                backgroundColor: [
+                    'rgb(121, 0, 56)',
+                    'rgb(5, 136, 141)',
+                ],
+                hoverOffset: 4,
+                borderWidth: 0,
+                cutout: '80%'
+            }]
+        };
+
+        const config = {
+            type: 'doughnut',
+            data: data,
+        };
+        const config1 = {
+            type: 'doughnut',
+            data: data1,
+        };
+        const config2 = {
+            type: 'doughnut',
+            data: data2,
+        };
+
+        new Chart(ctx, config);
+        new Chart(ctx1, config1);
+        new Chart(ctx2, config2);
+    </script>
+    <!-- chart js end -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
