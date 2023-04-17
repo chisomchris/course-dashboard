@@ -16,73 +16,79 @@
 
 <body>
     <div id="container">
-        <section class="side_navigation">
-            <div class="logo_and_hamburger">
-                <div class="hamburger">
-                    <!--hamburger-->
-                    <i class="stroke"></i>
-                    <i class="stroke"></i>
-                    <i class="stroke"></i>
-                </div>
-                <!--hamburger end-->
-                <!--side navigation-->
-                <div class="md-logo">
-                    <!--logo-->
-                    <img src="./assets/img/Instincthub logo.png" alt="">
-                </div>
-                <!--logo end-->
-            </div>
+        <div class="side_cont">
+            <section class="side_navigation">
+                <div>
+                    <div class="logo_and_hamburger">
+                        <div class="hamburger">
+                            <!--hamburger-->
+                            <i class="stroke"></i>
+                            <i class="stroke"></i>
+                            <i class="stroke"></i>
+                        </div>
+                        <!--hamburger end-->
+                        <!--side navigation-->
+                        <div class="md-logo">
+                            <!--logo-->
+                            <img src="./assets/img/Instincthub logo.png" alt="">
+                        </div>
+                        <!--logo end-->
+                    </div>
 
-            <ul class="tablist">
-                <!--tab List -->
-                <li class="tab">
-                    <!--tab-->
-                    <div class="indicator show"></div>
-                    <img src="./assets/img/bx_bxs-dashboard.png" alt="">
-                    <p class="hide">Overview</p>
-                </li>
-                <!--tab end-->
-                <li class="tab">
-                    <!--tab-->
-                    <div class="indicator"></div>
-                    <img src="./assets/img/akar-icons_file.png" alt="">
-                    <p class="hide">Classes</p>
-                </li>
-                <!--tab end-->
-                <li class="tab">
-                    <!--tab-->
-                    <div class="indicator"></div>
-                    <img src="./assets/img/codicon_graph.png" alt="">
-                    <p class="hide">Analytics</p>
-                </li>
-                <!--tab end-->
-                <li class="tab">
-                    <!--tab-->
-                    <div class="indicator"></div>
-                    <img src="./assets/img/ic_baseline-group.png" alt="">
-                    <p class="hide">Community</p>
-                </li>
-                <!--tab end-->
-                <li class="tab">
-                    <!--tab-->
-                    <div class="indicator"></div>
-                    <img src="./assets/img/fe_logout.png" alt="">
-                    <p class="hide">Logout</p>
-                </li>
-                <!--tab end-->
-            </ul>
-            <!--tab List end-->
+                    <ul class="tablist">
+                        <!--tab List -->
+                        <li class="tab">
+                            <!--tab-->
+                            <div class="indicator show"></div>
+                            <img src="./assets/img/bx_bxs-dashboard.png" alt="">
+                            <p class="hide">Overview</p>
+                        </li>
+                        <!--tab end-->
+                        <li class="tab">
+                            <!--tab-->
+                            <div class="indicator"></div>
+                            <img src="./assets/img/akar-icons_file.png" alt="">
+                            <p class="hide">Classes</p>
+                        </li>
+                        <!--tab end-->
+                        <li class="tab">
+                            <!--tab-->
+                            <div class="indicator"></div>
+                            <img src="./assets/img/codicon_graph.png" alt="">
+                            <p class="hide">Analytics</p>
+                        </li>
+                        <!--tab end-->
+                        <li class="tab">
+                            <!--tab-->
+                            <div class="indicator"></div>
+                            <img src="./assets/img/ic_baseline-group.png" alt="">
+                            <p class="hide">Community</p>
+                        </li>
+                        <!--tab end-->
+                        <li class="tab">
+                            <!--tab-->
+                            <div class="indicator"></div>
+                            <img src="./assets/img/fe_logout.png" alt="">
+                            <p class="hide">Logout</p>
+                        </li>
+                        <!--tab end-->
+                    </ul>
+                </div>
+                <!--tab List end-->
 
-            <div class="upgrade">
-                <!--upgrade-->
-                <img src="./assets/img/Upgrade illustration.png" alt="">
-                <h3>
-                    Upgrade your student portal account
-                </h3>
-                <button>Upgrade</button>
-            </div>
-            <!--upgrade end-->
-        </section>
+                <div>
+                    <div class="upgrade">
+                        <!--upgrade-->
+                        <img src="./assets/img/Upgrade illustration.png" alt="">
+                        <h3>
+                            Upgrade your student portal account
+                        </h3>
+                        <button>Upgrade</button>
+                    </div>
+                </div>
+                <!--upgrade end-->
+            </section>
+        </div>
         <!--side navigation end-->
 
         <main>
@@ -110,39 +116,41 @@
             </header>
             <!--header end-->
 
-            <section class="progress">
-                <!--progress grid-->
-                <div class="timing">
-                    <div class="chart_box">
-                        <p>71%</p>
-                        <canvas id="my_progress_daily"></canvas>
-                    </div>
+            <section class="progress_cont">
+                <div class="progress">
+                    <!--progress grid-->
+                    <div class="timing">
+                        <div class="chart_box">
+                            <p>71%</p>
+                            <canvas id="my_progress_daily"></canvas>
+                        </div>
 
-                    <div class="text">
-                        <h3>Daily</h3>
-                        <p>Activities</p>
+                        <div class="text">
+                            <h3>Daily</h3>
+                            <p>Activities</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timing">
-                    <div class="chart_box">
-                        <p>20%</p>
-                        <canvas id="my_progress_monthly"></canvas>
-                    </div>
+                    <div class="timing">
+                        <div class="chart_box">
+                            <p>20%</p>
+                            <canvas id="my_progress_monthly"></canvas>
+                        </div>
 
-                    <div class="text">
-                        <h3>Monthly</h3>
-                        <p>Activities</p>
+                        <div class="text">
+                            <h3>Monthly</h3>
+                            <p>Activities</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timing">
-                    <div class="chart_box">
-                        <p>12%</p>
-                        <canvas id="my_progress_yearly"></canvas>
-                    </div>
+                    <div class="timing">
+                        <div class="chart_box">
+                            <p>12%</p>
+                            <canvas id="my_progress_yearly"></canvas>
+                        </div>
 
-                    <div class="text">
-                        <h3>Yearly</h3>
-                        <p>Activities</p>
+                        <div class="text">
+                            <h3>Yearly</h3>
+                            <p>Activities</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -153,7 +161,7 @@
                 <ul>
                     <li class="header">
                         <!--course details-->
-                        
+
                         <div class="md_show">
                             <p class="number">No</p>
                         </div>

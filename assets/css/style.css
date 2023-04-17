@@ -1,7 +1,7 @@
-:right {
+:root {
     --black: #0e0e0e;
     --green: rgb(5, 136, 141);
-    --white: rgb(247, 255, 254);
+    --white: rgb(255, 255, 255);
     --violet: rgb(121, 0, 56);
 }
 
@@ -12,26 +12,55 @@
 body {
     margin: 0;
     background-color: aliceblue;
-    position: relative;
     font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
 }
 
 /* ==============
 Side navigation
 =================*/
-.side_navigation {
-    z-index: 10;
-    position: fixed;
+.side_cont {
+    position: absolute;
+    box-shadow: 0 0px .5rem .25rem #33333333;
     top: 0;
     left: 0;
-    padding-top: .5rem;
+    bottom: 0;
+    z-index: 10;
     margin: 0;
-    min-height: 100vh;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.side_cont::-webkit-scrollbar {
+    display: none;
+}
+
+.side_cont .side_navigation {
+    justify-content: space-between;
     width: 3rem;
-    background-color: rgb(255, 255, 255);
+    gap: 5rem;
+    min-height: 100%;
+    padding-top: .5rem;
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0px .5rem .25rem #33333333;
     transition: all .075s ease;
     -webkit-transition: all .075s ease;
     -moz-transition: all .075s ease;
@@ -91,8 +120,7 @@ Side navigation
     display: block;
     width: 2rem;
     height: 5px;
-    /* background-color: #0e0e0e; */
-    background-color: rgb(5, 136, 141);
+    background-color: var(--green);
     border-radius: .5rem;
     -webkit-border-radius: .5rem;
     -moz-border-radius: .5rem;
@@ -109,13 +137,13 @@ Side navigation
 }
 
 .side_navigation .tablist li {
-    background-color: #111111;
+    background-color: var(--black);
     padding-right: 3px;
     padding-block: .5rem;
     margin-bottom: .5rem;
     position: relative;
     display: flex;
-    color: white;
+    color: var(--white);
     align-items: center;
     gap: .75rem;
 }
@@ -129,7 +157,7 @@ Side navigation
 }
 
 .side_navigation .tablist li:hover p {
-    color: rgb(121, 0, 56);
+    color: var(--violet);
     font-weight: 900;
 }
 
@@ -149,7 +177,7 @@ Side navigation
 .side_navigation .tablist li .indicator {
     width: .5rem;
     height: 100%;
-    background-color: rgb(121, 0, 56);
+    background-color: var(--violet);
     position: absolute;
     top: 0;
     left: 0;
@@ -170,10 +198,10 @@ Side navigation
 }
 
 /* upgrade */
-.side_navigation .upgrade {
-    margin-top: auto;
-    margin-bottom: 5rem;
-}
+/* .side_cont .side_navigation{
+    background-color: aqua;
+} */
+
 
 .side_navigation .upgrade img {
     width: 3.25rem;
@@ -187,19 +215,27 @@ Side navigation
     display: none;
 }
 
-.side_navigation.side_navigation.expanded .upgrade {
-    border-radius: 1rem;
+.side_navigation.expanded .upgrade {
     padding: 0 1rem 1rem;
-    margin-top: auto;
-    margin-bottom: 5rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
     margin-left: auto;
     margin-right: auto;
-    background-color: aliceblue;
     width: calc(100% - 2rem);
-    -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
+    -webkit-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+}
+
+.side_navigation .upgrade {
+    margin-bottom: 2rem;
+    padding: 0;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
 }
 
 .side_navigation.side_navigation.expanded .upgrade img {
@@ -221,10 +257,10 @@ Side navigation
 .side_navigation.side_navigation.expanded .upgrade button {
     display: block;
     font-size: 1.075rem;
-    background-color: rgb(5, 136, 141);
+    background-color: var(--green);
     border: none;
     width: 100%;
-    color: white;
+    color: var(--white);
     padding: .5rem 1.25rem;
     margin-left: auto;
     margin-right: auto;
@@ -239,14 +275,17 @@ Side navigation
 main content
 =================*/
 main {
-    padding-left: 3rem;
+    margin-left: 3rem;
+    overflow-y: scroll;
+    width: calc(100vw - 3rem);
+    overflow-x: hidden;
 }
 
 /* header */
 main header {
     padding: .75rem 1rem;
     display: flex;
-    background-color: white;
+    background-color: var(--white);
     position: relative;
     align-items: center;
     margin-bottom: 5rem;
@@ -293,7 +332,7 @@ main header .flex_cont .search input {
     -o-border-radius: 5rem;
     width: 100%;
     outline: none;
-    background-color: white;
+    background-color: var(--white);
 }
 
 main header .flex_cont .search input:focus,
@@ -317,19 +356,28 @@ main header .meta {
 }
 
 /* progress section */
-main section.progress {
+main section.progress_cont {
     padding: 1rem;
+}
+
+main section.progress_cont .progress {
     display: grid;
     gap: .5rem;
     grid-template-columns: repeat(3, minmax(80px, 1fr));
     overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+main section.progress_cont .progress::-webkit-scrollbar {
+    display: none;
 }
 
 main .timing {
     text-align: center;
     flex-basis: 33%;
     align-items: center;
-    background-color: white;
+    background-color: var(--white);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -400,7 +448,7 @@ main .course_list ul {
 main .course_list ul li {
     font-weight: 500;
     margin: 0;
-    background-color: white;
+    background-color: var(--white);
     box-shadow: 0px 4px 4px rgba(0 0 0 / .2);
     z-index: 9;
     border-radius: .375rem;
@@ -467,7 +515,7 @@ main .course_list .md-hide {
 }
 
 main .course_list .md-hide.header {
-    color: #fff;
+    color: var(--white);
     font-size: 1em;
     width: auto;
 }
@@ -489,16 +537,17 @@ MEDIA QUERIES
 min-width: 540px
 =================== */
 @media only screen and (min-width: 620px) {
+
     main .course_list ul {
         padding-bottom: 1rem;
-        background-color: white;
+        background-color: var(--white);
         overflow: hidden;
     }
 
     main .course_list ul li {
         box-shadow: none;
         margin: 0;
-        background-color: white;
+        background-color: var(--white);
         border-radius: 0;
         display: grid;
         padding: .5rem 1.5rem;
@@ -513,8 +562,8 @@ min-width: 540px
     }
 
     main .course_list ul li.header {
-        background-color: #0e0e0e;
-        color: white;
+        background-color: var(--black);
+        color: var(--white);
         padding: 1rem 1.5rem;
         border-radius: 0;
         -webkit-border-radius: 0;
@@ -528,7 +577,7 @@ min-width: 540px
         grid-row: 1/3;
         background-color: transparent;
         position: relative;
-        color: #0e0e0e;
+        color: var(--black);
         top: 0;
         left: 0em;
         display: block;
@@ -576,26 +625,18 @@ min-width: 540px
 
     main .course_list .md_show {
         display: block;
-        color: #0e0e0e;
+        color: var(--black);
     }
 
     main .course_list .md_show p {
-        color: #fff;
+        color: var(--white);
     }
 
     main .course_list .md-hide.header {
         font-size: 1em;
-        color: #fff;
+        color: var(--white);
         width: auto;
     }
-}
-
-/* =============
-min-width: 620px
-================*/
-@media only screen and (min-width: 620px) {
-
-    /* progress */
 
     main .timing {
         flex-direction: row;
@@ -606,6 +647,7 @@ min-width: 620px
     }
 }
 
+
 /* =============
 min-width: 768px
 ================*/
@@ -614,7 +656,7 @@ min-width: 768px
     /* ==============
 Side navigation
 =================*/
-    .side_navigation {
+    .side_cont .side_navigation {
         width: 200px;
     }
 
@@ -637,7 +679,7 @@ Side navigation
         padding-left: 1rem;
         padding-block: 0rem;
         margin-bottom: .375rem;
-        color: white;
+        color: var(--white);
         display: flex;
         align-items: center;
         gap: .75rem;
@@ -660,6 +702,8 @@ Side navigation
         border-radius: 1rem;
         padding: 0 1rem 1rem;
         margin-top: auto;
+        margin-top: 5rem;
+        margin-top: max(5rem, auto);
         margin-bottom: 5rem;
         margin-left: auto;
         margin-right: auto;
@@ -690,10 +734,10 @@ Side navigation
     .side_navigation .upgrade button {
         display: block;
         font-size: 1.075rem;
-        background-color: rgb(5, 136, 141);
+        background-color: var(--green);
         border: none;
         width: 100%;
-        color: white;
+        color: var(--white);
         padding: .5rem 1.25rem;
         margin-left: auto;
         margin-right: auto;
@@ -709,14 +753,15 @@ Side navigation
 main content
 =================*/
     main {
-        padding-left: 200px;
+        width: calc(100vw - 200px);
+        margin-left: 200px;
     }
 
     /* header */
     main header {
         padding: .75rem 1rem;
         display: flex;
-        background-color: white;
+        background-color: var(--white);
         position: relative;
         align-items: center;
         margin-bottom: 5rem;
@@ -732,7 +777,7 @@ main content
     }
 
     /* progress section */
-    main section.progress {
+    main div.progress {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -752,19 +797,15 @@ min-width: 992px
     /* ==============
 Side navigation
 =================*/
-    .side_navigation {
+    .side_cont .side_navigation {
         width: 220px;
     }
-
-    /* .side_navigation .upgrade {
-        margin-bottom: 1rem;
-    } */
 
     /* ==============
 main content
 =================*/
     main {
-        padding-left: 220px;
+        width: calc(100vw - 220px);
     }
 
     /* header */
@@ -801,9 +842,9 @@ main content
     }
 
     /* progress section */
-    main section.progress {
-        gap: 1.5rem;
-        padding: .75rem 2rem;
+    main section.progress_cont .progress {
+        gap: 1.75rem;
+        padding: 0 1rem;
     }
 
     main .timing {
@@ -833,7 +874,7 @@ main content
 }
 
 @media only screen and (min-width: 768px) and (orientation: landscape) {
-    .side_navigation.side_navigation .upgrade {
+    .side_navigation .upgrade {
         margin-bottom: 1rem;
     }
 }
