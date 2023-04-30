@@ -23,7 +23,9 @@ html {
 }
 
 #container {
-    width: 100%;
+    width: min(100%, 1440px);
+    margin-inline: auto;
+    margin-left: auto;
     height: 100%;
     overflow: hidden;
     display: flex;
@@ -196,12 +198,6 @@ Side navigation
 .side_navigation .tablist li .indicator.show {
     display: block;
 }
-
-/* upgrade */
-/* .side_cont .side_navigation{
-    background-color: aqua;
-} */
-
 
 .side_navigation .upgrade img {
     width: 3.25rem;
@@ -435,6 +431,7 @@ main .course_list {
 
 table {
     width: 100%;
+    margin-bottom: .5rem;
     border-collapse: collapse;
     border-radius: 1rem;
     overflow: hidden;
@@ -467,17 +464,79 @@ td:last-child {
     text-align: right;
     padding-right: 1.5rem;
 }
+
 th:first-child,
 td:first-child {
     padding-left: 1.25rem;
     padding-right: 0.25rem;
 }
 
+tr {
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0 0 0 / .025);
+    border-bottom-width: 1px;
+}
+
+tr:last-of-type {
+    border-bottom-style: none;
+}
+
+/* Learn more section */
+.learn_more {
+    padding: 0 1rem;
+    position: relative;
+}
+
+.learn_more>div {
+    padding-block: 1rem;
+}
+
+.learn_more>div>div {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+
+.learn_more .img_desktop {
+    display: none;
+}
+
+.learn_more h1 {
+    font-size: 1.75rem;
+}
+
+.learn_more button {
+    background-color: var(--white);
+    border: none;
+    color: var(--violet);
+    padding: .75rem 2rem;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.learn_more .image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.learn_more .texts p {
+    width: min(400px, 100%);
+}
+
 /* ==============
 MEDIA QUERIES
 =================*/
 /* =================
-min-width: 540px
+min-width: 620px
 =================== */
 @media only screen and (min-width: 620px) {
 
@@ -588,6 +647,9 @@ min-width: 540px
     main .timing .text p {
         display: block;
     }
+
+    /* Learn more section */
+
 }
 
 
@@ -730,6 +792,40 @@ main content
         gap: .375rem;
     }
 
+    .learn_more>div {
+        padding-top: 2rem;
+    }
+
+    .learn_more>div>div {
+        padding: 0;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .learn_more .texts {
+        padding-left: 4rem;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+
+
+    .learn_more .image {
+        transform-origin: bottom right;
+        transform: scale(1.125);
+        -webkit-transform: scale(1.125);
+        -moz-transform: scale(1.125);
+        -ms-transform: scale(1.125);
+        -o-transform: scale(1.125);
+    }
+
+    .image img {
+        height: 100%;
+    }
+
+    .learn_more .texts>div {
+        margin-block: auto;
+    }
 }
 
 /* =============
@@ -813,6 +909,10 @@ main content
     main .course_list {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+
+    .learn_more {
+        padding: 0 2rem;
     }
 }
 
